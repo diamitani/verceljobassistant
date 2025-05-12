@@ -1,10 +1,27 @@
 {
   "functions": {
-    "api/*.py": {
+    "api/parse_resume.py": {
+      "runtime": "vercel-python@0.5.1"
+    },
+    "api/search_jobs.py": {
+      "runtime": "vercel-python@0.5.1"
+    },
+    "api/parse_job_link.py": {
       "runtime": "vercel-python@0.5.1"
     }
   },
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/\1.py" }
+    {
+      "src": "/api/parse_resume",
+      "dest": "/api/parse_resume.py"
+    },
+    {
+      "src": "/api/search_jobs",
+      "dest": "/api/search_jobs.py"
+    },
+    {
+      "src": "/api/parse_job_link",
+      "dest": "/api/parse_job_link.py"
+    }
   ]
 }
